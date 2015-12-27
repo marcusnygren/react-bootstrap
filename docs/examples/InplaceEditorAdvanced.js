@@ -1,4 +1,4 @@
-const InlineEditorAdvanced = React.createClass({
+const InplaceEditorAdvanced = React.createClass({
   getInitialState() {
     return {
       alertVisible: true
@@ -34,4 +34,4 @@ const InlineEditorAdvanced = React.createClass({
   }
 });
 
-ReactDOM.render(<InlineEditorAdvanced />, mountNode);
+ReactDOM.render(<InplaceEditorAdvanced />, mountNode);

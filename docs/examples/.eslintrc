@@ -63,6 +63,7 @@
     "Well",
     "Thumbnail",
     "Collapse",
-    "Fade"
+    "Fade",
+    "InplaceEditor"
   }
 }

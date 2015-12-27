@@ -55,6 +55,7 @@ export Tabs from './Tabs';
 export Thumbnail from './Thumbnail';
 export Tooltip from './Tooltip';
 export Well from './Well';
+export InplaceEditor from './InplaceEditor';
 
 export Collapse from './Collapse';
 export Fade from './Fade';

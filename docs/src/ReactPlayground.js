@@ -59,6 +59,7 @@ const Tabs = require('../../src/Tabs');
 const Thumbnail = require('../../src/Thumbnail');
 const Tooltip = require('../../src/Tooltip');
 const Well = require('../../src/Well');
+const InplaceEditor = require('../../src/InplaceEditor');
 /* eslint-enable */
 
 import babel from 'babel-core/browser';
