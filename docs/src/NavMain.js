@@ -19,6 +19,10 @@ const NAV_LINKS = {
   'support': {
     link: '/support.html',
     title: 'Support'
+  },
+  'marcus': {
+    link: '/marcus.html',
+    title: 'Marcus'
   }
 };
 
