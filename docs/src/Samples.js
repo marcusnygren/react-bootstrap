@@ -110,6 +110,8 @@ export default {
   ImageResponsive:               require('fs').readFileSync(__dirname + '/../examples/ImageResponsive.js', 'utf8'),
   ImageShape:                    require('fs').readFileSync(__dirname + '/../examples/ImageShape.js', 'utf8'),
   ResponsiveEmbed:               require('fs').readFileSync(__dirname + '/../examples/ResponsiveEmbed.js', 'utf8'),
+  InlineEditorBasic:             require('fs').readFileSync(__dirname + '/../examples/InlineEditorBasic.js', 'utf8'),
+  InlineEditorAdvanced:          require('fs').readFileSync(__dirname + '/../examples/InlineEditorAdvanced.js', 'utf8'),
 
   Overlay:                       require('fs').readFileSync(__dirname + '/../examples/Overlay.js', 'utf8'),
   OverlayCustom:                 require('fs').readFileSync(__dirname + '/../examples/OverlayCustom.js', 'utf8')
