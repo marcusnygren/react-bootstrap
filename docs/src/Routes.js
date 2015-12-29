@@ -1,6 +1,7 @@
 import React from 'react';
 import {IndexRoute, Route} from 'react-router';
 
+import MarcusPage from './MarcusPage';
 import ComponentsPage from './ComponentsPage';
 import GettingStartedPage from './GettingStartedPage';
 import HomePage from './HomePage';
@@ -8,7 +9,6 @@ import IntroductionPage from './IntroductionPage';
 import NotFoundPage from './NotFoundPage';
 import Root from './Root';
 import SupportPage from './SupportPage';
-import MarcusPage from './MarcusPage';
 
 export default (
   <Route path="/" component={Root}>

@@ -1,36 +1,43 @@
 const InplaceEditorAdvanced = React.createClass({
   getInitialState() {
     return {
-      alertVisible: true
+      value: '',
+      newValue: '',
+      disabled: true
     };
   },
 
+  handleChange() {
+    this.setState({
+      value: this.refs.input.getValue(),
+      newValue: this.refs.input.getValue()
+    });
+
+    console.log('Text: ' + this.refs.input.getValue());
+  },
+
+  activateField() {
+    console.log('activate!');
+
+    this.setState({
+      disabled: false
+    });
+  },
+
   render() {
-    if (this.state.alertVisible) {
-      return (
-        <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss}>
-          <h4>Oh snap! You got an error!</h4>
-          <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-          <p>
-            <Button bsStyle="danger">Take this action</Button>
-            <span> or </span>
-            <Button onClick={this.handleAlertDismiss}>Hide Alert</Button>
-          </p>
-        </Alert>
-      );
-    }
-
     return (
-      <Button onClick={this.handleAlertShow}>Show Alert</Button>
+      <div>
+          <Input
+          type="text"
+          placeholder="Enter text"
+          value={this.state.value}
+          ref="input"
+          onChange={this.handleChange}
+          disabled={this.state.disabled} />
+
+          <ButtonInput type="submit" value="Submit Your Input" bsStyle={this.state.style} bsSize="large" onClick={this.activateField} />
+      </div>
     );
-  },
-
-  handleAlertDismiss() {
-    this.setState({alertVisible: false});
-  },
-
-  handleAlertShow() {
-    this.setState({alertVisible: true});
   }
 });
 
