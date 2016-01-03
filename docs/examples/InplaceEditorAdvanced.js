@@ -5,8 +5,9 @@ const InplaceEditorAdvanced = React.createClass({
         bsStyle="warning"
         buttonText="Lorum"
         introText="Hej"
-        buttonSize="small"
-        placeholderText="Year in Review">
+        buttonSize="large"
+        placeholderText="Year in Review"
+        editableByDefault={true}>
         Lorum ipsum.
       </InplaceEditor>
     );

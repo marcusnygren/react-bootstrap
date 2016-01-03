@@ -11,15 +11,16 @@ let InplaceEditor = React.createClass({
     buttonText: React.PropTypes.string,
     introText: React.PropTypes.string,
     buttonSize: React.PropTypes.string,
-    placeholderText: React.PropTypes.string
+    placeholderText: React.PropTypes.string,
+    editableByDefault: React.PropTypes.bool
   },
 
   getDefaultProps() {
     return {
-      buttonText: 'Button',
-      introText: 'Intro text',
-      buttonSize: 'large',
-      placeholderText: 'Placeholder header text'
+      buttonText: 'Edit header',
+      introText: '',
+      buttonSize: 'small',
+      placeholderText: 'Editable header'
     };
   },
 
@@ -29,6 +30,15 @@ let InplaceEditor = React.createClass({
       newValue: '',
       disabled: true
     };
+  },
+
+  componentWillMount() {
+    console.log(this.props.editableByDefault);
+    if (this.props.editableByDefault) {
+      this.setState({
+        disabled: false
+      });
+    }
   },
 
   handleChange() {
