@@ -7,6 +7,22 @@ import ButtonInput from './ButtonInput';
 
 let InplaceEditor = React.createClass({
 
+  propTypes: {
+    buttonText: React.PropTypes.string,
+    introText: React.PropTypes.string,
+    buttonSize: React.PropTypes.string,
+    placeholderText: React.PropTypes.string
+  },
+
+  getDefaultProps() {
+    return {
+      buttonText: 'Button',
+      introText: 'Intro text',
+      buttonSize: 'large',
+      placeholderText: 'Placeholder header text'
+    };
+  },
+
   getInitialState() {
     return {
       value: '',
@@ -20,8 +36,6 @@ let InplaceEditor = React.createClass({
       value: this.refs.input.getValue(),
       newValue: this.refs.input.getValue()
     });
-
-    console.log('Text: ' + this.refs.input.getValue());
   },
 
   activateField() {
@@ -41,15 +55,22 @@ let InplaceEditor = React.createClass({
 
     return (
       <div {...this.props} className={classNames(this.props.className, classes)}>
+        {this.props.introText}
+
         <Input
           type="text"
-          placeholder="Enter text"
+          placeholder={this.props.placeholderText}
           value={this.state.value}
           ref="input"
           onChange={this.handleChange}
           disabled={this.state.disabled} />
 
-          <ButtonInput type="submit" value="Edit" bsStyle={this.state.style} bsSize="large" onClick={this.activateField} />
+        <ButtonInput
+          type="submit"
+          value={this.props.buttonText}
+          bsStyle={this.state.style}
+          bsSize={this.props.buttonSize}
+          onClick={this.activateField} />
       </div>
     );
   }

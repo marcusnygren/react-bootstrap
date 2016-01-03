@@ -17,8 +17,8 @@ const MarcusPage = React.createClass({
           <NavMain activePage="marcus" />
 
           <PageHeader
-            title="Marcus components"
-            subTitle="Use of custom React components" />
+            title="Marcus' components"
+            subTitle="Inplace editor & Step by step" />
 
           <div className="container bs-docs-container">
             <div className="row">
