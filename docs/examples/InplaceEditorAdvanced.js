@@ -17,11 +17,15 @@ const InplaceEditorAdvanced = React.createClass({
   },
 
   activateField() {
-    console.log('activate!');
-
-    this.setState({
-      disabled: false
-    });
+    if (this.state.disabled) {
+      this.setState({
+        disabled: false
+      });
+    } else {
+      this.setState({
+        disabled: true
+      });
+    }
   },
 
   render() {
@@ -35,7 +39,7 @@ const InplaceEditorAdvanced = React.createClass({
           onChange={this.handleChange}
           disabled={this.state.disabled} />
 
-          <ButtonInput type="submit" value="Submit Your Input" bsStyle={this.state.style} bsSize="large" onClick={this.activateField} />
+          <ButtonInput type="submit" value="Edit" bsStyle={this.state.style} bsSize="large" onClick={this.activateField} />
       </div>
     );
   }
