@@ -7,10 +7,10 @@ import Samples from '../Samples';
 export default function InplaceEditorSection() {
   return (
     <div className="bs-docs-section">
-      <h2 className="page-header"><Anchor id="inplacee-ditor">Inplace editors</Anchor> <small>Customizable</small></h2>
+      <h2 className="page-header"><Anchor id="inplacee-ditor">Inplace editor</Anchor> <small>Customizable</small></h2>
       <ReactPlayground codeText={Samples.InplaceEditorBasic} />
 
-      <h3><Anchor id="advanced-inplace-editor">Advanced inplace editors</Anchor></h3>
+      <h3><Anchor id="advanced-inplace-editor">Customized inplace editor</Anchor></h3>
       <ReactPlayground codeText={Samples.InplaceEditorAdvanced} />
     </div>
   );

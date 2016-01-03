@@ -12,7 +12,8 @@ let InplaceEditor = React.createClass({
     introText: React.PropTypes.string,
     buttonSize: React.PropTypes.string,
     placeholderText: React.PropTypes.string,
-    editableByDefault: React.PropTypes.bool
+    placeholderSize: React.PropTypes.string,
+    editableByDefault: React.PropTypes.bool,
   },
 
   getDefaultProps() {
@@ -20,7 +21,8 @@ let InplaceEditor = React.createClass({
       buttonText: 'Edit header',
       introText: '',
       buttonSize: 'small',
-      placeholderText: 'Editable header'
+      placeholderText: 'Editable header',
+      placeholderSize: 'large',
     };
   },
 
@@ -28,7 +30,8 @@ let InplaceEditor = React.createClass({
     return {
       value: '',
       newValue: '',
-      disabled: true
+      disabled: true,
+      editMode: 'info'
     };
   },
 
@@ -57,6 +60,16 @@ let InplaceEditor = React.createClass({
         disabled: true
       });
     }
+
+    if (this.state.disabled) {
+      this.setState({
+        editMode: 'warning'
+      });
+    } else {
+      this.setState({
+        editMode: 'success'
+      });
+    }
   },
 
   render() {
@@ -72,7 +85,9 @@ let InplaceEditor = React.createClass({
           value={this.state.value}
           ref="input"
           onChange={this.handleChange}
-          disabled={this.state.disabled} />
+          disabled={this.state.disabled}
+          bsSize="large"
+          bsStyle={this.state.editMode} />
 
         <ButtonInput
           type="submit"

@@ -7,6 +7,7 @@ const InplaceEditorAdvanced = React.createClass({
         introText="Hej"
         buttonSize="large"
         placeholderText="Year in Review"
+        placeholderSize="medium"
         editableByDefault>
         Lorum ipsum.
       </InplaceEditor>
