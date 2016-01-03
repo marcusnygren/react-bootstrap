@@ -33,7 +33,6 @@ let InplaceEditor = React.createClass({
   },
 
   componentWillMount() {
-    console.log(this.props.editableByDefault);
     if (this.props.editableByDefault) {
       this.setState({
         disabled: false
