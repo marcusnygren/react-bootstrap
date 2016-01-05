@@ -1,4 +1,21 @@
 const InplaceEditorAdvanced = React.createClass({
+  createHeader() {
+    return (
+      <Input
+          type="text" />
+    );
+  },
+
+  createButton() {
+    return (
+      <ButtonInput
+          ref="myButton"
+          type="submit"
+          onClick=""
+          value="Hej" />
+    );
+  },
+
   render() {
     return (
       <InplaceEditor
@@ -8,6 +25,8 @@ const InplaceEditorAdvanced = React.createClass({
         buttonSize="large"
         placeholderText="Year in Review"
         placeholderSize="medium"
+        header={this.createHeader()}
+        button={this.createButton()}
         editableByDefault>
         Lorum ipsum.
       </InplaceEditor>

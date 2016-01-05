@@ -14,6 +14,8 @@ let InplaceEditor = React.createClass({
     placeholderText: React.PropTypes.string,
     placeholderSize: React.PropTypes.string,
     editableByDefault: React.PropTypes.bool,
+    header: React.PropTypes.node,
+    button: React.PropTypes.node
   },
 
   getDefaultProps() {
@@ -31,11 +33,14 @@ let InplaceEditor = React.createClass({
       value: '',
       newValue: '',
       disabled: true,
-      editMode: 'info'
+      editMode: 'warning',
+      buttonText: ''
     };
   },
 
   componentWillMount() {
+    this.setButtonText();
+
     if (this.props.editableByDefault) {
       this.setState({
         disabled: false
@@ -63,16 +68,34 @@ let InplaceEditor = React.createClass({
 
     if (this.state.disabled) {
       this.setState({
-        editMode: 'warning'
+        editMode: 'success'
       });
     } else {
       this.setState({
-        editMode: 'success'
+        editMode: 'error'
+      });
+    }
+  },
+
+  setButtonText() {
+    if (this.props.button) {
+      //this.props.button.props.value = 'Gris';
+
+      this.setState({
+        buttonText: this.props.button.props.value
       });
     }
   },
 
   render() {
+    let button = this.props.button;
+
+    /*if (button) {
+      button.onClick = function() { alert('blah'); };
+    }*/
+
+    console.log(this.props.button);
+    console.log(button);
     let classes = bootstrapUtils.getClassSet(this.props);
 
     return (
@@ -89,9 +112,11 @@ let InplaceEditor = React.createClass({
           bsSize="large"
           bsStyle={this.state.editMode} />
 
+        {this.props.button}
+
         <ButtonInput
           type="submit"
-          value={this.props.buttonText}
+          value={this.state.buttonText}
           bsStyle={this.state.style}
           bsSize={this.props.buttonSize}
           onClick={this.activateField} />
