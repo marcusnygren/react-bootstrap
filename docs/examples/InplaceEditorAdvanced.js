@@ -21,7 +21,7 @@ const InplaceEditorAdvanced = React.createClass({
       <InplaceEditor
         bsStyle="warning"
         buttonText="Lorum"
-        introText="Hej"
+        introText="Hej. "
         buttonSize="large"
         placeholderText="Year in Review"
         placeholderSize="medium"

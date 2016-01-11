@@ -82,6 +82,10 @@ let InplaceEditor = React.createClass({
       this.setState({
         buttonText: this.props.button.props.value
       });
+    } else if (this.props.buttonText) {
+      this.setState({
+        buttonText: this.props.buttonText
+      });
     }
   },
 
