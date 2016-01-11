@@ -34,7 +34,7 @@ let InplaceEditor = React.createClass({
       newValue: '',
       disabled: true,
       editMode: 'warning',
-      buttonText: ''
+      buttonText: 'Edit header'
     };
   },
 
@@ -79,8 +79,6 @@ let InplaceEditor = React.createClass({
 
   setButtonText() {
     if (this.props.button) {
-      //this.props.button.props.value = 'Gris';
-
       this.setState({
         buttonText: this.props.button.props.value
       });
@@ -88,19 +86,13 @@ let InplaceEditor = React.createClass({
   },
 
   render() {
-    let button = this.props.button;
-
-    /*if (button) {
-      button.onClick = function() { alert('blah'); };
-    }*/
-
-    console.log(this.props.button);
-    console.log(button);
     let classes = bootstrapUtils.getClassSet(this.props);
 
     return (
       <div {...this.props} className={classNames(this.props.className, classes)}>
         {this.props.introText}
+
+        {this.props.children}
 
         <Input
           type="text"

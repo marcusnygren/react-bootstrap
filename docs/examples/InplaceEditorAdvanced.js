@@ -25,10 +25,10 @@ const InplaceEditorAdvanced = React.createClass({
         buttonSize="large"
         placeholderText="Year in Review"
         placeholderSize="medium"
-        header={this.createHeader()}
-        button={this.createButton()}
+        //header={this.createHeader()}
+        //button={this.createButton()}
         editableByDefault>
-        Lorum ipsum.
+        Lorum hej.
       </InplaceEditor>
     );
   }
