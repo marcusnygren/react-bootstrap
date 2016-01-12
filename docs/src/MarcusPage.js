@@ -6,7 +6,7 @@ import PageFooter from './PageFooter';
 
 import ReactPlayground from './ReactPlayground';
 import InplaceEditorSection from './sections/InplaceEditorSection';
-import StepByStepSection from './sections/StepByStepSection';
+import StepsLeftSection from './sections/StepsLeftSection';
 
 /* eslint-enable indent */
 
@@ -28,7 +28,7 @@ const MarcusPage = React.createClass({
 
                   <InplaceEditorSection />
 
-                  <StepByStepSection />
+                  <StepsLeftSection />
 
                 </div>
               </div>
