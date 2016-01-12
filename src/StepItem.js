@@ -9,7 +9,10 @@ const StepItem = React.createClass({
       React.PropTypes.string,
       React.PropTypes.number
     ]),
-    eventKey: React.PropTypes.string,
+    eventKey: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
     active: React.PropTypes.bool,
     title: React.PropTypes.node,
   },
@@ -19,16 +22,6 @@ const StepItem = React.createClass({
       bsClass: 'step',
       active: false,
     };
-  },
-
-  getInitialState() {
-    /*
-    if(this.props.eventKey = this.defaultActiveKey) {
-      this.setState({
-        active: bool
-      })
-    }*/
-    return null;
   },
 
   render() {
