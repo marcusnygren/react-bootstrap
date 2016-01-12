@@ -112,6 +112,8 @@ export default {
   ResponsiveEmbed:               require('fs').readFileSync(__dirname + '/../examples/ResponsiveEmbed.js', 'utf8'),
   InplaceEditorBasic:            require('fs').readFileSync(__dirname + '/../examples/InplaceEditorBasic.js', 'utf8'),
   InplaceEditorAdvanced:         require('fs').readFileSync(__dirname + '/../examples/InplaceEditorAdvanced.js', 'utf8'),
+  StepByStepBasic:               require('fs').readFileSync(__dirname + '/../examples/StepByStepBasic.js', 'utf8'),
+  StepByStepAdvanced:            require('fs').readFileSync(__dirname + '/../examples/StepByStepAdvanced.js', 'utf8'),
 
   Overlay:                       require('fs').readFileSync(__dirname + '/../examples/Overlay.js', 'utf8'),
   OverlayCustom:                 require('fs').readFileSync(__dirname + '/../examples/OverlayCustom.js', 'utf8')

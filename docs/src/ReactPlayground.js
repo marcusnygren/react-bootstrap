@@ -60,6 +60,8 @@ const Thumbnail = require('../../src/Thumbnail');
 const Tooltip = require('../../src/Tooltip');
 const Well = require('../../src/Well');
 const InplaceEditor = require('../../src/InplaceEditor');
+const StepByStep = require('../../src/StepByStep');
+const StepItem = require('../../src/StepItem');
 /* eslint-enable */
 
 import babel from 'babel-core/browser';
