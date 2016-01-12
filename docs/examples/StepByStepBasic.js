@@ -1,12 +1,12 @@
 const StepByStepInstance = React.createClass({
   getInitialState() {
     return {
-      key: 1
+      key: 4
     };
   },
 
   handleSelect(key) {
-    alert('selected ' + key);
+    console.log(key);
     this.setState({key});
   },
 
@@ -20,7 +20,7 @@ const StepByStepInstance = React.createClass({
         <StepItem eventKey={2}>
           Login & email!
         </StepItem>
-        <StepItem eventKey={3} active>
+        <StepItem eventKey={3}>
           Complete your infos!
         </StepItem>
         <StepItem eventKey={4}>
