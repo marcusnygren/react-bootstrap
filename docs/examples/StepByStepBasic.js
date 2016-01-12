@@ -1,22 +1,22 @@
 const stepByStepInstance = (
-  <StepByStep bsStyle="warning" >
-    <h2>Your Steps</h2>
-    <StepItem href="#">
+  <StepByStep defaultActiveKey={5} bsStyle="warning" >
+    <h3>Your Steps</h3>
+    <StepItem eventKey={1}>
       Choose the plan!
     </StepItem>
-    <StepItem href="http://getbootstrap.com/components/#breadcrumbs">
+    <StepItem eventKey={2}>
       Login & email!
     </StepItem>
-    <StepItem active>
+    <StepItem eventKey={3}>
       Complete your infos!
     </StepItem>
-    <StepItem href="#">
+    <StepItem eventKey={4}>
       Subscription period!
     </StepItem>
-    <StepItem href="#">
+    <StepItem eventKey={5}>
       Review your order!
     </StepItem>
-    <StepItem href="#">
+    <StepItem eventKey={6}>
       Proceed to paypal!
     </StepItem>
   </StepByStep>

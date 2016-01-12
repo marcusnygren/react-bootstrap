@@ -1,44 +1,22 @@
-import classNames from 'classnames';
 import React from 'react';
-
+import classNames from 'classnames';
+import tbsUtils from './utils/bootstrapUtils';
 import SafeAnchor from './SafeAnchor';
 
 const StepItem = React.createClass({
   propTypes: {
-    /**
-     * If set to true, renders `span` instead of `a`
-     */
-    active: React.PropTypes.bool,
-    /**
-     * HTML id for the wrapper `li` element
-     */
     id: React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.number
     ]),
-    /**
-     * HTML id for the inner `a` element
-     */
-    linkId: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
-    ]),
-    /**
-     * `href` attribute for the inner `a` element
-     */
-    href: React.PropTypes.string,
-    /**
-     * `title` attribute for the inner `a` element
-     */
+    eventKey: React.PropTypes.string,
+    active: React.PropTypes.bool,
     title: React.PropTypes.node,
-    /**
-     * `target` attribute for the inner `a` element
-     */
-    target: React.PropTypes.string
   },
 
   getDefaultProps() {
     return {
+      bsClass: 'step',
       active: false,
     };
   },
@@ -48,18 +26,15 @@ const StepItem = React.createClass({
       active,
       className,
       id,
-      linkId,
       children,
       href,
       title,
-      target,
+      eventKey,
       ...props } = this.props;
 
     const linkProps = {
-      href,
-      title,
-      target,
-      id: linkId
+      href: '#' + eventKey,
+      id: eventKey
     };
 
     return (
