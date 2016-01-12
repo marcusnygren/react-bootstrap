@@ -21,6 +21,16 @@ const StepItem = React.createClass({
     };
   },
 
+  getInitialState() {
+    /*
+    if(this.props.eventKey = this.defaultActiveKey) {
+      this.setState({
+        active: bool
+      })
+    }*/
+    return null;
+  },
+
   render() {
     const {
       active,

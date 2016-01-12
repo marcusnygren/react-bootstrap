@@ -7,7 +7,7 @@ const stepByStepInstance = (
     <StepItem eventKey={2}>
       Login & email!
     </StepItem>
-    <StepItem eventKey={3}>
+    <StepItem eventKey={3} active>
       Complete your infos!
     </StepItem>
     <StepItem eventKey={4}>
