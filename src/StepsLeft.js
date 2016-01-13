@@ -24,7 +24,7 @@ const StepsLeft = React.createClass({
 
   onStepClick(child, index) {
     if (this.props.onStepClick) {
-      this.props.onStepClick(child, index); //event is undefined as of now
+      this.props.onStepClick(child, index);
     }
 
     this.setState({
@@ -44,8 +44,6 @@ const StepsLeft = React.createClass({
     if (index === this.state.activeId) {
       isActiveId = true;
     }
-
-    //console.log('index ' + index + ' is active id? ' + isActiveId);
 
     return (
       isActiveId ?

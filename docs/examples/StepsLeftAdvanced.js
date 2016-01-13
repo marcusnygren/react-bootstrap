@@ -11,7 +11,7 @@ const StepsLeftAdvanced = React.createClass({
       return (
         <div>
           <h4>You clicked "{this.state.clickedText}"</h4>
-          <p>PS: pretty cool that I could overwrite the custom behavior straight from the example code, right?</p>
+          <p>PS: pretty cool that I could overwrite the onClick behavior from the example code, right?</p>
         </div>
       );
     } else {
