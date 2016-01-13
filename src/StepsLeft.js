@@ -11,7 +11,8 @@ const StepsLeft = React.createClass({
 
   getDefaultProps() {
     return {
-      bsClass: 'stepsLeft'
+      bsClass: 'stepsLeft',
+      onStepClick: function() { return undefined; },
     };
   },
 
@@ -22,7 +23,9 @@ const StepsLeft = React.createClass({
   },
 
   onStepClick(child, index) {
-    this.props.onStepClick(child, index); //event is undefined as of now
+    if (this.props.onStepClick) {
+      this.props.onStepClick(child, index); //event is undefined as of now
+    }
 
     this.setState({
       activeId: index
@@ -45,14 +48,18 @@ const StepsLeft = React.createClass({
     //console.log('index ' + index + ' is active id? ' + isActiveId);
 
     return (
-      <NavItem
-        title={title}
-        onSelect={this.onStepClick.bind(this, child, index)}
-        linkId={'' + index}
-        active={isActiveId}
-        >
+      isActiveId ?
+        <li {...child.props}>
         {title}
-      </NavItem>
+        </li> :
+        <NavItem
+          title={title}
+          onSelect={this.onStepClick.bind(this, child, index)}
+          linkId={'' + index}
+          active={isActiveId}
+          >
+          {title}
+        </NavItem>
     );
   },
 
@@ -65,9 +72,9 @@ const StepsLeft = React.createClass({
     const childSteps = ValidComponentChildren.map(children, this.renderStep);
 
     return (
-      <div>
+      <ol>
         {childSteps}
-      </div>
+      </ol>
     );
   },
 });

@@ -1,7 +1,8 @@
 const StepsLeftAdvanced = React.createClass({
   getInitialState() {
     return {
-      showCustomText: false
+      showCustomText: false,
+      clickedText: ''
     };
   },
 
@@ -9,9 +10,8 @@ const StepsLeftAdvanced = React.createClass({
     if (this.state.showCustomText) {
       return (
         <div>
-          <h4>I chose to customize the component!</h4>
-          <p>When a user clicks a step, I wanted to not show all the steps, and show this instead.
-          Pretty cool that I could overwrite the custom behavior, right?</p>
+          <h4>You clicked "{this.state.clickedText}"</h4>
+          <p>PS: pretty cool that I could overwrite the custom behavior straight from the example code, right?</p>
         </div>
       );
     } else {
@@ -42,9 +42,12 @@ const StepsLeftAdvanced = React.createClass({
   },
 
   handleClick(child, index) {
-    //console.log(child.props.title);
-    //console.log('index: ' + index);
-    this.setState({showCustomText: true});
+    console.log(child.props.title); // You can now access the child
+    // console.log('index: ' + index);
+    this.setState({
+      showCustomText: true,
+      clickedText: child.props.title
+    });
   },
 });
 
