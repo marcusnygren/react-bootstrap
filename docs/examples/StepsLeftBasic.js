@@ -1,13 +1,7 @@
 const StepsLeftInstance = React.createClass({
-  getInitialState() {
-    return {
-      alertVisible: false
-    };
-  },
-
   render() {
     return (
-      <StepsLeft onStepClick={this.handleAlertDismiss} bsStyle="warning">
+      <StepsLeft bsStyle="warning">
         <h2>Your Steps</h2>
         <Step title="Choose the plan!">
         Lorum
@@ -29,13 +23,7 @@ const StepsLeftInstance = React.createClass({
         </Step>
       </StepsLeft>
     )
-  },
-
-  handleAlertDismiss(child, index) {
-    console.log(child.props.title);
-    console.log('index: ' + index);
-    this.setState({alertVisible: false});
-  },
+  }
 });
 
 ReactDOM.render(<StepsLeftInstance />, mountNode);

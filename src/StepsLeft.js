@@ -42,7 +42,7 @@ const StepsLeft = React.createClass({
       isActiveId = true;
     }
 
-    console.log('index ' + index + ' is active id? ' + isActiveId);
+    //console.log('index ' + index + ' is active id? ' + isActiveId);
 
     return (
       <NavItem
