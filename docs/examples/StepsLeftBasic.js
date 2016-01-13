@@ -31,10 +31,9 @@ const StepsLeftInstance = React.createClass({
     )
   },
 
-  handleAlertDismiss(a, b) {
-    console.log(a);
-    console.log(b);
-    console.log('Hej!');
+  handleAlertDismiss(child, index) {
+    console.log(child.props.title);
+    console.log('index: ' + index);
     this.setState({alertVisible: false});
   },
 });

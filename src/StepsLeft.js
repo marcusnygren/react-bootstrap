@@ -15,12 +15,18 @@ const StepsLeft = React.createClass({
     };
   },
 
-  onStepClick(event) {
-    this.props.onStepClick(event); //event is undefined as of now
+  getInitialState() {
+    return {
+      activeId: 1
+    }
+  },
 
-    /*this.setState({
-      activeId:
-    });*/
+  onStepClick(child, index) {
+    this.props.onStepClick(child, index); //event is undefined as of now
+
+    this.setState({
+      activeId: index
+    });
   },
 
   renderStep(child, index) {
@@ -30,11 +36,20 @@ const StepsLeft = React.createClass({
 
     let { title, children } = child.props; //children: text within a step
 
+    let isActiveId = false;
+
+    if (index === this.state.activeId) {
+      isActiveId = true;
+    }
+
+    console.log('index ' + index + ' is active id? ' + isActiveId);
+
     return (
       <NavItem
         title={title}
-        onSelect={this.onStepClick}
+        onSelect={this.onStepClick.bind(this, child, index)}
         linkId={'' + index}
+        active={isActiveId}
         >
         {title}
       </NavItem>

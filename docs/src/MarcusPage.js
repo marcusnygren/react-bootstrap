@@ -26,9 +26,9 @@ const MarcusPage = React.createClass({
               <div className="col-md-9" role="main">
                 <div className="bs-docs-section">
 
-                  <InplaceEditorSection />
-
                   <StepsLeftSection />
+
+                  <InplaceEditorSection />
 
                 </div>
               </div>
